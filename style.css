@@ -33,24 +33,39 @@ section {
     align-items: center;
 }
 
-p {
-    font-size: var(--font-size);
+.card {
+    width: 350px;
+    border-radius: 20px;
+    background-color: white;
+    overflow: hidden;
+    text-align: center;
 }
 
-ul {
-    list-style-type:none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+.card-header {
+    background-image: url(images/bg-pattern-card.svg);
+    background-size: cover;
+    height: 150px;
 }
 
-ul li {
-    font-weight: $fontWeight2;
+.card-body {
+    
 }
 
-li span {
+.img-holder {
+    width: 95px;
+    height: 95px;
+    border-radius: 50%;
+    border: 5px solid white;
+    overflow: hidden;
+    margin: -50px auto 30px auto;
+}
+
+.img-holder img {
+    width: 100%;
+    height: auto;
     display: block;
 }
+
 
 .attribution {
     font-size: 11px;
