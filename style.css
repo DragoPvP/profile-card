@@ -48,7 +48,7 @@ section {
 }
 
 .card-body {
-    
+    padding: 0 20px 30px ;
 }
 
 .img-holder {
@@ -66,6 +66,26 @@ section {
     display: block;
 }
 
+.name-age {
+    font-size: 1rem;
+    margin-bottom: 20px;
+
+}
+
+.age, .city, .meta {
+    font-weight: 400;
+    color: var(--dark-grayish-blue);
+    opacity: 0.6;
+}
+
+.age {
+    font-weight: 400;
+}
+
+.card-footer {
+    border-top: 1px solid hsl(0, 3%, 86%);
+    display: flex;
+}
 
 .attribution {
     font-size: 11px;
