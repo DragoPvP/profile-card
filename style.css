@@ -1,121 +1,112 @@
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap');
-
 :root {
-    /* Primary */
-
-    --dark-cyan: hsl(185, 75%, 39%);
-    --very-dark-desaturated-blue: hsl(229, 23%, 23%);
-    --dark-grayish-blue: hsl(227, 10%, 46%);
-
- /* Neutral */
-    --dark-gray: hsl(0, 0%, 59%);
-
-    /* Font-Size */
-    --font-size: 18px;
+    --color-dark-cyan: hsl(185, 75%, 39%) ;
+    --color-very-dark-desaturated-blue: hsl(229, 23%, 23%);
+    --color-dark-greyish-blue: hsl(227, 10%, 46%);
+    --color-dark-grey: hsl(0, 0%, 59%);
 }
 
-* {
+html {
     box-sizing: border-box;
-    padding: 0;
+    font-size: 50%;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
     margin: 0;
+    padding: 0;
 }
 
 body {
+    perspective: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 3rem;
+    background: url('../img/bg-pattern-top.svg'), url('../img/bg-pattern-bottom.svg'), var(--color-dark-cyan);
+    background-repeat: no-repeat;
+    background-position: right calc(47vw + 15%) bottom calc(65vh - 15vw), left calc(40vw + 25%) top calc(72vh - 10vw);
     font-family: 'Kumbh Sans', sans-serif;
-    color: var(--very-dark-desaturated-blue);
+    font-size: 2.25rem;
 }
 
-section {
-    background-color: var(--dark-cyan);
-    height: 100vh;
+.container {
+    transform-style: preserve-3d;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    width: 120rem;
+    height: 80rem;
 }
 
 .card {
-    width: 350px;
-    border-radius: 20px;
+    transform-style: preserve-3d;
+    border-radius: 2rem;
     background-color: white;
+    box-shadow: 0 2rem 8rem rgba(0, 0, 0, .2);
     overflow: hidden;
+
+    &__middle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-bottom: 1px solid #ededed;
+
+        &__img {
+            margin-top: -7.5rem;
+            margin-bottom: 3rem;
+            border: 5px solid white;
+            border-radius: 50%;
+            transition: all .5s ease;
+        }
+
+        &__title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.25rem;
+            transition: all .5s ease;
+
+            h1 {
+                margin-right: 1rem;
+                color: var(--color-very-dark-desaturated-blue);
+                font-size: inherit;
+            }
+
+            span {
+                color: var(--color-dark-grey);
+            }
+        }
+
+        &__location {
+            margin-bottom: 3rem;
+            color: var(--color-dark-grey);
+            font-size: 1.75rem;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+        padding: 3rem 6rem;
+        padding-top: 3.5rem;
+        padding-right: 7rem;
+    }
+}
+
+.figure {
     text-align: center;
-}
 
-.card-header {
-    background-image: url(images/bg-pattern-card.svg);
-    background-size: cover;
-    height: 150px;
-}
+    &__title {
+        margin-bottom: 1rem;
+        color: var(--color-very-dark-desaturated-blue);
+        font-weight: 700;
+    }
 
-.card-body {
-    padding: 0 20px 25px ;
-}
-
-.img-holder {
-    width: 95px;
-    height: 95px;
-    border-radius: 50%;
-    border: 5px solid white;
-    overflow: hidden;
-    margin: -50px auto 30px auto;
-}
-
-.img-holder img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.name-age {
-    font-size: 1.1rem;
-    margin-bottom: 12px;
-}
-
-.age, .city, .meta {
-    font-weight: 400;
-    color: var(--dark-grayish-blue);
-    opacity: 0.6;
-}
-
-.age {
-    font-weight: 400;
-    margin-left: 6px;
-}
-
-.city {
-    font-size: 0.9rem;
-}
-
-.card-footer {
-    border-top: 1px solid hsl(0, 3%, 86%);
-    display: flex;
-    padding: 0 25px;
-}
-
-.card-footer .item {
-    flex: 1;
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.card-footer .item .value {
-    font-size: 1rem;
-    margin-bottom: 6px;
-}
-
-.item .meta {
-    font-size: 0.7rem;
-    letter-spacing: 1px;
-}
-
-.attribution {
-    font-size: 11px;
-    text-align: center;
-}
-
-.attribution a {
-    color: hsl(228, 45%, 44%);
+    &__description {
+        color: var(--color-dark-grey);
+        font-size: 1.25rem;
+        letter-spacing: 1px;
+    }
 }
